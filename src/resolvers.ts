@@ -14,7 +14,7 @@ const resolvers: IResolvers = {
     }),
     getBet: (parent, { id }, { db }) => Bet.findByPk(id),
     getBetList: (parent, args, { db }) => Bet.findAll(),
-    getBestBetPerUser: async (parent, { limit = 1 }, { db }) => {
+    getBestBetPerUser: async (parent, { limit }, { db }) => {
       const bets = await Bet.findAll({
         include: [User],
         limit: limit,

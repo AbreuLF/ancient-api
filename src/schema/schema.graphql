@@ -3,7 +3,7 @@ type Query {
   getUserList: [User!]!
   getBet(id: ID!): Bet
   getBetList: [Bet!]!
-  getBestBetPerUser(limit: Int): [Bet!]!
+  getBestBetPerUser(limit: Int = 10): [Bet!]!
 }
 
 type User {
